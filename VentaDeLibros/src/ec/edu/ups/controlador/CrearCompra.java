@@ -49,6 +49,8 @@ public class CrearCompra extends HttpServlet {
 			String [] infoDigital=listaD.split(";");
 			System.out.println("tam1: "+General.empresa.getListFisico().size());
 			System.out.println("tam2: "+infoDigital.length);
+			int conDet=General.contadorDet;
+			int conCab=General.contadorCab;
 			float total=0;
 			for(int i=1;i<infoFisico.length;i++) {
 				String [] aux=infoFisico[i].split(",");
@@ -82,7 +84,15 @@ public class CrearCompra extends HttpServlet {
 			compCab.setTotal(total);
 			for(int i=0; i<General.empresa.getListCliente().size(); i++) {
 				if(General.empresa.getListCliente().get(i).getCedula().equals(cedula)) {
-					General.empresa.getListCliente().get(i).addCabecera(compCab);
+					if(General.empresa.getListCliente().get(i).getCredito()>=total) {
+						float credA=General.empresa.getListCliente().get(i).getCredito();
+						General.empresa.getListCliente().get(i).setCredito(credA-total);;
+						General.empresa.getListCliente().get(i).addCabecera(compCab);
+					}
+					else {
+						General.contadorCab=conCab;
+						General.contadorDet=conDet;
+					}
 					break;
 				}
 			}

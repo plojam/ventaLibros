@@ -28,7 +28,7 @@
 		if(lista_C != null){
 			for(int i = 0; i < lista_C.size(); i++) {
 				
-				out.println("<h1>Pedidos</h1>");
+				out.println("<h1>Pedido "+(i+1)+"</h1>");
 				out.println("<p>------------------------------------------------------------------------------------------</p>");
 				
 				out.println("<table><tr>"
