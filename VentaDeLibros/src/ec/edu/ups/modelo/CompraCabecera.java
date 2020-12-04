@@ -6,7 +6,7 @@ public class CompraCabecera {
 	
 	private int id;
 	private float total;
-	private ArrayList<CompraDetalle> detalles;
+	private ArrayList<CompraDetalle> detalles = new ArrayList<CompraDetalle>();
 	
 	public int getId() {
 		return id;

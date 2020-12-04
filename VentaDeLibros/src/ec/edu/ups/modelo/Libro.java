@@ -6,7 +6,7 @@ public abstract class Libro {
 	
 	private int id;
 	private String titulo;
-	private ArrayList<Autor> aurotes;
+	private ArrayList<Autor> aurotes = new ArrayList<Autor>();
 	private String edicion;
 	private float precio;
 	

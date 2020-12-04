@@ -7,8 +7,8 @@ public class CompraDetalle {
 	private int id;
 	private int cantidad;
 	private float subtotal;
-	private ArrayList<Digital> digital;
-	private ArrayList<Fisico> fisico;
+	private ArrayList<Digital> digital = new ArrayList<Digital>();
+	private ArrayList<Fisico> fisico = new ArrayList<Fisico>();
 	
 	public int getId() {
 		return id;

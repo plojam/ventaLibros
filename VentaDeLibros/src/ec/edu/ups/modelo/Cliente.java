@@ -6,7 +6,7 @@ public class Cliente extends Persona {
 	
 	private String cedula;
 	private String direccion;
-	private ArrayList<CompraCabecera> listCabecera;
+	private ArrayList<CompraCabecera> listCabecera = new ArrayList<CompraCabecera>();
 	
 	
 	public String getCedula() {
