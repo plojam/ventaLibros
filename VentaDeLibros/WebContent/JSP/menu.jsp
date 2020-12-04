@@ -27,6 +27,11 @@
 	<form action="agregarCredito" method="post">
         <input type="submit" value="Agregar credito a un cliente" >
     </form> <br>
+    
+    <form action="ControladorGeneral" method="post">
+    	<input type='hidden' name='op' value='1' />
+        <input type="submit" value="Crear Pedido" >
+    </form> <br>
 
 	<% 
 		for (int i=0;i<sta.getListCliente().size();i++){

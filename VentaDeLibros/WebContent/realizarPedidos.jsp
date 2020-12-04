@@ -9,18 +9,7 @@
 </head>
 <body>
 
-<h1>Menu simple de Biblioteca</h1>
-<%  Empresa sta = (Empresa) request.getAttribute("Emp");   %>
-
-	
-	<form action="crearCliente" method="post">
-        <input type="submit" value="Registrarse como cliente" >
-    </form> <br>
-
-	<form action="agregarCredito" method="post">
-        <input type="submit" value="Agregar credito a un cliente" >
-    </form> <br>
-    
+<h1>Crear Pedidos</h1>
 	<% Empresa empresa = (Empresa) request.getAttribute("empresa"); %>
 	<section id="tablaFisico">
 		<h1>Libros Fisicos</h1>
