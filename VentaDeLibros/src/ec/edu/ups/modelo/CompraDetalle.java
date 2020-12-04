@@ -7,8 +7,8 @@ public class CompraDetalle {
 	private int id;
 	private int cantidad;
 	private float subtotal;
-	private ArrayList<Digital> digital = new ArrayList<Digital>();
-	private ArrayList<Fisico> fisico = new ArrayList<Fisico>();
+	private Digital digital;
+	private Fisico fisico;
 	
 	public int getId() {
 		return id;
@@ -18,19 +18,19 @@ public class CompraDetalle {
 		this.id = id;
 	}
 	
-	public ArrayList<Digital> getDigital() {
+	public Digital getDigital() {
 		return digital;
 	}
 	
-	public void setDigital(ArrayList<Digital> digital) {
+	public void setDigital(Digital digital) {
 		this.digital = digital;
 	}
 	
-	public ArrayList<Fisico> getFisico() {
+	public Fisico getFisico() {
 		return fisico;
 	}
 	
-	public void setFisico(ArrayList<Fisico> fisico) {
+	public void setFisico(Fisico fisico) {
 		this.fisico = fisico;
 	}
 
