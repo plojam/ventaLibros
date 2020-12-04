@@ -15,7 +15,7 @@
 
 <h1>Menu simple de Biblioteca</h1>
 
-	<%Empresa emp= new Empresa();%>
+	<%Empresa empresa= new Empresa();%>
 	
 	<form action="crearCliente" method="post">
         <input type="submit" value="Registrarse como cliente" >
@@ -25,9 +25,9 @@
         <input type="submit" value="Agregar credito a un cliente" >
     </form> <br>
     
-	<div id="tablasProd">
+	<section id="tablasProd">
    		
-    </div>
+    </section>
 
 
 </body>
