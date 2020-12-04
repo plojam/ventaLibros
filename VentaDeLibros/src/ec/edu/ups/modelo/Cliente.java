@@ -7,14 +7,16 @@ public class Cliente extends Persona {
 	
 	private String cedula;
 	private String direccion;
+	private float credito;
 	private List<CompraCabecera> listCabecera= new ArrayList<CompraCabecera>();
 	
-	public Cliente(int id, String nombre, String apellido, String cedula, String direccion) {
+	public Cliente(int id, String nombre, String apellido, String cedula, String direccion, float credito) {
 		this.setId(id);
 		this.setNombre(nombre);
 		this.setApellido(apellido);
 		this.setCedula(cedula);
 		this.setDireccion(direccion);
+		this.setCredito(credito);
 	}
 	
 	public String getCedula() {
@@ -44,6 +46,15 @@ public class Cliente extends Persona {
 	public void addCabecera(CompraCabecera cabecera) {
 		this.listCabecera.add(cabecera);
 	}
+
+	public float getCredito() {
+		return credito;
+	}
+
+	public void setCredito(float credito) {
+		this.credito = credito;
+	}
+	
 	
 	
 }

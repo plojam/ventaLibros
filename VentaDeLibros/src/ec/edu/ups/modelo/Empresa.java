@@ -28,10 +28,10 @@ public class Empresa {
 	}
 	
 	public void setearClientes() {
-		Cliente cli1=new Cliente(1, "Carlos", "AlberTuCarita", "0123456985", "La loma");
-		Cliente cli2=new Cliente(2, "Pablo", "Estebanquito", "0102365482", "Baños");
-		Cliente cli3=new Cliente(3, "Florencio", "Bautiso", "01025634872", "Paute");
-		Cliente cli4=new Cliente(4, "Robbyn", "Tauromakia", "0102531475", "Zamborondon");
+		Cliente cli1=new Cliente(1, "Carlos", "AlberTuCarita", "0123456985", "La loma", 100);
+		Cliente cli2=new Cliente(2, "Pablo", "Estebanquito", "0102365482", "Baños", 200);
+		Cliente cli3=new Cliente(3, "Florencio", "Bautiso", "01025634872", "Paute", 150);
+		Cliente cli4=new Cliente(4, "Robbyn", "Tauromakia", "0102531475", "Zamborondon", 300);
 		listCliente.add(cli1);
 		listCliente.add(cli2);
 		listCliente.add(cli3);
