@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import ec.edu.ups.modelo.CompraCabecera;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -17,7 +18,7 @@ import java.util.List;
 @WebServlet("/listarCompras")
 public class listarCompras extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private List<CompraCabecera> compras;
+	private List<CompraCabecera> compras= new ArrayList<CompraCabecera>();
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -43,7 +44,7 @@ public class listarCompras extends HttpServlet {
 		try {
 			String cedula = (String) request.getParameter("cedula");
 			//System.out.println(cedula);
-			
+			System.out.println("inicio");
 			int persona=-1;
 			for(int i=0; i<General.empresa.getListCliente().size(); i++) {
 				if(General.empresa.getListCliente().get(i).getCedula().equals(cedula)) {
@@ -52,11 +53,11 @@ public class listarCompras extends HttpServlet {
 				}
 			}
 			//System.out.println("Credito actual: " + General.empresa.getListCliente().get(persona).getCredito());
-			
+			System.out.println("mitad");
 			for(int i = 0; i < General.empresa.getListCliente().get(persona).getListCabecera().size(); i++) {
-				compras.add(General.empresa.getListCliente().get(persona).getListCabecera().get(i));
+				compras=General.empresa.getListCliente().get(persona).getListCabecera();
 			}
-			
+			System.out.println("si se pudo buroo");
 			request.setAttribute("compras", compras);
 			
 			//System.out.println("Credito nuevo: " + General.empresa.getListCliente().get(persona).getCredito());

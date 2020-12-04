@@ -26,7 +26,7 @@
         <input type="submit" value="Crear Pedido" >
     </form> <br>
     
-    <form action="JSP/listar_compras.jsp" method="post">
+    <form action="listar_compras.jsp" method="post">
         <input type="submit" value="Ver Compras" >
     </form> <br>
 
