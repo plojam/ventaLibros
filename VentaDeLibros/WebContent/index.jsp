@@ -17,6 +17,10 @@
 	<form action="crearCliente" method="post">
         <input type="submit" value="Registrarse como cliente" >
     </form> <br>
+    
+    <form action="agregarCredito" method="post">
+        <input type="submit" value="Agregar credito a un cliente" >
+    </form> <br>
 
 
 </body>
