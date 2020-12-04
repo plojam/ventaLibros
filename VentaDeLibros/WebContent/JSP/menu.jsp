@@ -15,7 +15,7 @@
 <h1>Menu simple de Biblioteca</h1>
 
 	
-	<form action="crearCliente" method="post">
+	<form action="FormularioClientes.jsp" method="post">
         <input type="submit" value="Registrarse como cliente" >
     </form> <br>
 

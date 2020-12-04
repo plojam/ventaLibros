@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<FORM action="">
+<FORM action="/VentaDeLibros/crearCliente"  method="post">
 
 <label for="nombre">Nombre: </label>
 <input type="text" id="nombre" name="nombre" placeholder="Ingrese su correo" /> <BR />
@@ -24,6 +24,8 @@
 <input type="text" id="id" name="id" placeholder="Ingrese su correo" />
 <label for="credito">Credito inicial: </label>
 <input type="text" id="credito" name="credito" placeholder="Ingrese su correo" /><BR />
+
+
 
 <input id="crear" type="submit" value="Registrar Cliente">
 

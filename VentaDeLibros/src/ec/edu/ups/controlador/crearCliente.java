@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
+import ec.edu.ups.modelo.Cliente;
+
 /**
  * Servlet implementation class crearCliente
  */
@@ -37,16 +40,28 @@ public class crearCliente extends HttpServlet {
 
 		
 		String url=null;
+		
+		
+		
+		String nombre = (String) request.getParameter("nombre");
+		String apellido = (String) request.getParameter("apellido");
+		String cedula = (String) request.getParameter("cedula");
+		String direcion = (String) request.getParameter("direcion");
+		int id = Integer.parseInt(request.getParameter("id"));
+		float credito = Float.parseFloat(request.getParameter("credito"));
+		
+		System.out.println(nombre +"|"+ apellido+"|"+ cedula +"|"+ direcion +"|"+ id +"|"+credito);
+		
+		
 		try {
-			//String idEmp=request.getParameter("idEmp");
+			Cliente e = new Cliente(id, nombre, apellido, cedula, direcion, credito);
 			
-			//Usuario usu= usuDao.validarU(idEmp, url2);
+			General.empresa.getListCliente().add(e);
 			
 			
-			//request.setAttribute("usu", usu);
-			url = "/JSP/FormularioClientes.jsp";
+			url = "/JSP/menu.jsp";
 		}catch(Exception e) {
-			url = "/JSP/NadaqueVerAqui.jsp";
+			url = "/JSP/menu.jsp";
 		}
 		
 		getServletContext().getRequestDispatcher(url).forward(request, response);
