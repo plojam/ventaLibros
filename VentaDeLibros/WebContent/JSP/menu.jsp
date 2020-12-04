@@ -13,18 +13,13 @@
 </head>
 <body>
 <h1>Menu simple de Biblioteca</h1>
-<%  Empresa sta = (Empresa) request.getAttribute("Emp");   %>
 
-	<%
-		Empresa empresa= new Empresa();
-		request.setAttribute("empresa", empresa);
-	%>
 	
 	<form action="crearCliente" method="post">
         <input type="submit" value="Registrarse como cliente" >
     </form> <br>
 
-	<form action="agregarCredito" method="post">
+	<form action="JSP/credito.jsp" method="post">
         <input type="submit" value="Agregar credito a un cliente" >
     </form> <br>
     
@@ -33,11 +28,5 @@
         <input type="submit" value="Crear Pedido" >
     </form> <br>
 
-	<% 
-		for (int i=0;i<sta.getListCliente().size();i++){
-			out.println("<p>"+sta.getListCliente().get(i)+"</p>");
-			
-		}
-	%>
 </body>
 </html>
