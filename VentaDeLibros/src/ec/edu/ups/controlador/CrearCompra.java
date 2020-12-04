@@ -47,30 +47,32 @@ public class CrearCompra extends HttpServlet {
 			List<CompraDetalle> lisDet=new ArrayList<CompraDetalle>();
 			String [] infoFisico=listaF.split(";");
 			String [] infoDigital=listaD.split(";");
+			System.out.println("tam1: "+General.empresa.getListFisico().size());
+			System.out.println("tam2: "+infoDigital.length);
 			float total=0;
 			for(int i=1;i<infoFisico.length;i++) {
 				String [] aux=infoFisico[i].split(",");
-				Fisico lFisico=General.empresa.getListFisico().get(Integer.parseInt(aux[0]));
+				Fisico lFisico=General.empresa.getListFisico().get(Integer.parseInt(aux[0])-1);
 				float subtotal=Integer.parseInt(aux[1])*lFisico.calcularPrecioFinal();
 				total=total+subtotal;
 				CompraDetalle comDet = new CompraDetalle();
 				comDet.setId(General.contadorDet=General.contadorDet+1);
 				comDet.setCantidad(Integer.parseInt(aux[1]));
 				comDet.setSubtotal(subtotal);
-				comDet.setFisico(General.empresa.getListFisico().get(Integer.parseInt(aux[0])));
+				comDet.setFisico(General.empresa.getListFisico().get(Integer.parseInt(aux[0])-1));
 				comDet.setDigital(null);
 				lisDet.add(comDet);
 			}
 			for(int i=1;i<infoDigital.length;i++) {
 				String [] aux=infoDigital[i].split(",");
-				Digital lDigital=General.empresa.getListDigital().get(Integer.parseInt(aux[0]));
+				Digital lDigital=General.empresa.getListDigital().get(Integer.parseInt(aux[0])-1);
 				float subtotal=Integer.parseInt(aux[1])*lDigital.calcularPrecioFinal();
 				total=total+subtotal;
 				CompraDetalle comDet = new CompraDetalle();
 				comDet.setId(General.contadorDet=General.contadorDet+1);
 				comDet.setCantidad(Integer.parseInt(aux[1]));
 				comDet.setSubtotal(subtotal);
-				comDet.setDigital(General.empresa.getListDigital().get(Integer.parseInt(aux[0])));
+				comDet.setDigital(General.empresa.getListDigital().get(Integer.parseInt(aux[0])-1));
 				comDet.setFisico(null);
 				lisDet.add(comDet);
 			}
