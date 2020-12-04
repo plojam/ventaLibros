@@ -49,14 +49,11 @@ public class listarCompras extends HttpServlet {
 			for(int i=0; i<General.empresa.getListCliente().size(); i++) {
 				if(General.empresa.getListCliente().get(i).getCedula().equals(cedula)) {
 					persona = i;
+					compras=General.empresa.getListCliente().get(persona).getListCabecera();
 					break;
 				}
-			}
-			//System.out.println("Credito actual: " + General.empresa.getListCliente().get(persona).getCredito());
-			System.out.println("mitad");
-			for(int i = 0; i < General.empresa.getListCliente().get(persona).getListCabecera().size(); i++) {
-				compras=General.empresa.getListCliente().get(persona).getListCabecera();
-			}
+			}	
+			
 			System.out.println("si se pudo buroo");
 			request.setAttribute("compras", compras);
 			
