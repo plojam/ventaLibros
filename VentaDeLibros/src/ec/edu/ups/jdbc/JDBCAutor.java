@@ -4,19 +4,15 @@ import ec.edu.ups.modelo.Autor;
 
 public class JDBCAutor extends JDBCGeneric<Autor, Integer> {
 
-	public void create(Autor entity) {
-		// TODO Auto-generated method stub
-
+	public void create(Autor autor) {
+		sql.update("INSERT autor VALUES (0,'" + autor.getNombre() + "','" + autor.getApellido() + "','" + autor.getAlias() + "')");
 	}
 
 	public void read(Integer id) {
-		// TODO Auto-generated method stub
-
+		
 	}
 
 	public void update(Autor entity) {
-		// TODO Auto-generated method stub
-
 	}
 
 	public void delete(Autor entity) {

@@ -1,6 +1,5 @@
 package ec.edu.ups.jdbc;
 
-
 public abstract class JDBCGeneric<T, ID> {
 
 	protected ContextJDBC sql = ContextJDBC.getJDBC();
