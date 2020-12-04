@@ -29,10 +29,9 @@ public class ControladorGeneral extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url=null;
-		Empresa emp=new Empresa();
 		int op=Integer.parseInt(request.getParameter("op"));
 		if(op==1) {
-			request.setAttribute("empresa", emp);
+			request.setAttribute("empresa", General.empresa);
 			url="/realizarPedidos.jsp";
 		}
 		getServletContext().getRequestDispatcher(url).forward(request, response);
