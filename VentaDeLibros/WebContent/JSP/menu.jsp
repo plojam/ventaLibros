@@ -19,13 +19,17 @@
         <input type="submit" value="Registrarse como cliente" >
     </form> <br>
 
-	<form action="JSP/credito.jsp" method="post">
+	<form action="credito.jsp" method="post">
         <input type="submit" value="Agregar credito a un cliente" >
     </form> <br>
     
     <form action="ControladorGeneral" method="post">
     	<input type='hidden' name='op' value='1' />
         <input type="submit" value="Crear Pedido" >
+    </form> <br>
+
+	<form action="/VentaDeLibros/verDatos" method="post">
+        <input type="submit" value="Ver datos" >
     </form> <br>
 
 </body>
