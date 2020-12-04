@@ -14,8 +14,8 @@
 <body>
 
 <h1>Menu simple de Biblioteca</h1>
+<%  Empresa sta = (Empresa) request.getAttribute("Emp");   %>
 
-	<%Empresa empresa= new Empresa();%>
 	
 	<form action="crearCliente" method="post">
         <input type="submit" value="Registrarse como cliente" >
@@ -28,6 +28,19 @@
 	<section id="tablasProd">
    		
     </section>
+
+	<% 
+		for (int i=0;i<sta.getListCliente().size();i++){
+			out.println("<p>"+sta.getListCliente().get(i)+"</p>");
+			
+		}
+	
+	
+	
+	
+	%>
+
+
 
 
 </body>

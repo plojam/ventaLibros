@@ -54,6 +54,12 @@ public class Cliente extends Persona {
 	public void setCredito(float credito) {
 		this.credito = credito;
 	}
+
+	@Override
+	public String toString() {
+		return "Cliente [cedula=" + cedula + ", direccion=" + direccion + ", credito=" + credito + ", listCabecera="
+				+ listCabecera + "]";
+	}
 	
 	
 	
