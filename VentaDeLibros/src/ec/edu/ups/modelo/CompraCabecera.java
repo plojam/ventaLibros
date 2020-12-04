@@ -1,12 +1,13 @@
 package ec.edu.ups.modelo;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class CompraCabecera {
 	
 	private int id;
 	private float total;
-	private ArrayList<CompraDetalle> detalles = new ArrayList<CompraDetalle>();
+	private List<CompraDetalle> detalles = new ArrayList<CompraDetalle>();
 	
 	public int getId() {
 		return id;
@@ -16,11 +17,11 @@ public class CompraCabecera {
 		this.id = id;
 	}
 	
-	public ArrayList<CompraDetalle> getDetalles() {
+	public List<CompraDetalle> getDetalles() {
 		return detalles;
 	}
 	
-	public void setCompraDetalles(ArrayList<CompraDetalle> detalles) {
+	public void setCompraDetalles(List<CompraDetalle> detalles) {
 		this.detalles = detalles;
 	}
 	
@@ -34,10 +35,6 @@ public class CompraCabecera {
 
 	public void setTotal(float total) {
 		this.total = total;
-	}
-
-	public void setDetalles(ArrayList<CompraDetalle> detalles) {
-		this.detalles = detalles;
 	}
 	
 	

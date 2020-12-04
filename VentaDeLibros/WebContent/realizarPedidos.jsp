@@ -4,13 +4,18 @@
 <%@page import="ec.edu.ups.modelo.*"%>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+	<script src='/VentaDeLibros/JavaScript/menu.js'></script>
 </head>
 <body>
-
-<h1>Crear Pedidos</h1>
+	<div id="pantalla">
+	<h1>Crear Pedidos</h1>
 	<% Empresa empresa = (Empresa) request.getAttribute("empresa"); %>
+	
+	<input type='text' id="cedula" placeholder="Ingre su cedula">
+	<input type='button'  value='Completar Pedido' onclick="confirmar()">
+	
 	<section id="tablaFisico">
 		<h1>Libros Fisicos</h1>
 		<table>
@@ -25,8 +30,8 @@
 		    </tr>
 			<% for(Fisico fis:empresa.getListFisico()){
    					out.println("<tr><td>"+fis.getId()+"</td><td>"+fis.getTitulo()+"</td><td>"+fis.getAurotes().get(0).getAlias()+
-   							"</td><td>"+fis.getEdicion()+"</td><td>"+fis.getPrecio()+"</td><td><td class='tg-y698'>"+
-   							"</td><td><input type='text'></td><td><input type='button' value='Pedir' onclick='recogerDat(this)'></td>");	
+   							"</td><td>"+fis.getEdicion()+"</td><td>"+fis.getPrecio()+"</td>"+
+   							"<td><input type='text' size='5'></td><td><input type='button' value='Pedir' onclick='recogerDatFis(this)'></td>");	
 	   		   }
 	   		%>
 		</table>
@@ -46,11 +51,12 @@
 		    </tr>
 			<% for(Digital digi:empresa.getListDigital()){
    					out.println("<tr><td>"+digi.getId()+"</td><td>"+digi.getTitulo()+"</td><td>"+digi.getAurotes().get(0).getAlias()+
-   							"</td><td>"+digi.getEdicion()+"</td><td>"+digi.getPrecio()+"</td><td><td class='tg-y698'>"+
-   							"</td><td><input type='text'></td><td><input type='button' value='Pedir' onclick='recogerDat(this)'></td>");	
+   							"</td><td>"+digi.getEdicion()+"</td><td>"+digi.getPrecio()+
+   							"<td><input type='text' size='5'></td><td><input type='button' value='Pedir' onclick='recogerDatDigi(this)'></td>");	
 	   		   }
 	   		%>
 		</table>
     </section>
+	</div>
 </body>
 </html>

@@ -13,8 +13,6 @@
 </head>
 <body>
 <h1>Menu simple de Biblioteca</h1>
-
-	
 	<form action="FormularioClientes.jsp" method="post">
         <input type="submit" value="Registrarse como cliente" >
     </form> <br>
@@ -23,14 +21,17 @@
         <input type="submit" value="Agregar credito a un cliente" >
     </form> <br>
     
-    <form action="ControladorGeneral" method="post">
+    <form action="/VentaDeLibros/CrearCompra" method="post">
     	<input type='hidden' name='op' value='1' />
         <input type="submit" value="Crear Pedido" >
+    </form> <br>
+    
+    <form action="JSP/listar_compras.jsp" method="post">
+        <input type="submit" value="Ver Compras" >
     </form> <br>
 
 	<form action="/VentaDeLibros/verDatos" method="post">
         <input type="submit" value="Ver datos" >
     </form> <br>
-
 </body>
 </html>
