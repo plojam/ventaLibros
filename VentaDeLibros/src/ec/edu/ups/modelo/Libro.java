@@ -1,12 +1,13 @@
 package ec.edu.ups.modelo;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public abstract class Libro {
 	
 	private int id;
 	private String titulo;
-	private ArrayList<Autor> aurotes = new ArrayList<Autor>();
+	private List<Autor> aurotes = new ArrayList<Autor>();
 	private String edicion;
 	private float precio;
 	
@@ -36,11 +37,11 @@ public abstract class Libro {
 		this.titulo = titulo;
 	}
 	
-	public ArrayList<Autor> getAurotes() {
+	public List<Autor> getAurotes() {
 		return aurotes;
 	}
 	
-	public void setAurotes(ArrayList<Autor> aurotes) {
+	public void setAurotes(List<Autor> aurotes) {
 		this.aurotes = aurotes;
 	}
 	
