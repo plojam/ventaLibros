@@ -19,15 +19,8 @@
 		<input type="submit" value="Listar Compras">
 	</form>
 	
-	<table>
-	<tr>
-		<td><strong>Id</strong></td>
-		<td><strong>Titulo</strong></td>
-		<td><strong>Autor</strong></td>
-		<td><strong>Cantidad</strong></td>
-		<td><strong>Subtotal</strong></td>
-		<td><strong>Total</strong></td>
-	</tr>
+	
+	
 	
 	<% 
 		List<CompraCabecera> lista_C = (List<CompraCabecera>) request.getAttribute("compras");
@@ -35,29 +28,52 @@
 		if(lista_C != null){
 			for(int i = 0; i < lista_C.size(); i++) {
 				
-				out.println("<tr><td>" + lista_C.get(i).getId()+"</td>");
+				out.println("<h1>Pedidos</h1>");
+				out.println("<p>------------------------------------------------------------------------------------------</p>");
+				
+				out.println("<table><tr>"
+							+"<td><strong>Id</strong></td>"
+							+"<td><strong>Total</strong></td>"
+							+"</tr>");
+				
+				
+				out.println("<tr><td>" + lista_C.get(i).getId()
+							+"</td><td>"+lista_C.get(i).getTotal()
+							+"</td></table>");
+				
+				out.println("<table><tr>"
+						+"<td><strong>Id</strong></td>"
+						+"<td><strong>Tipo</strong></td>"
+						+"<td><strong>Libro</strong></td>"
+						+"<td><strong>Cantidad</strong></td>"
+						+"<td><strong>Subtotal</strong></td>"
+						+"</tr>");
 				
 				for(int j = 0; j < lista_C.get(i).getDetalles().size(); j++){
 					
 					if(lista_C.get(i).getDetalles().get(j).getDigital() == null){
-						out.println("<td>" + lista_C.get(i).getDetalles().get(j).getFisico().getTitulo() + "</td>");
-						out.println("<td>" + lista_C.get(i).getDetalles().get(j).getFisico().getAurotes().get(0).getAlias() + "</td>");
-						out.println("<td>" + lista_C.get(i).getDetalles().get(j).getCantidad() + "</td>");
-						out.println("<td>" + lista_C.get(i).getDetalles().get(j).getSubtotal() + "</td>");
+						out.println("<tr><td>" + lista_C.get(i).getDetalles().get(j).getId()
+								+"</td><td>Fisico"
+								+"</td><td>"+lista_C.get(i).getDetalles().get(j).getFisico().getTitulo()
+								+"</td><td>"+lista_C.get(i).getDetalles().get(j).getCantidad()
+								+"</td><td>"+lista_C.get(i).getDetalles().get(j).getSubtotal()
+								+"</td>");
 					}else{
-						out.println("<td>" + lista_C.get(i).getDetalles().get(j).getDigital().getTitulo() + "</td>");
-						out.println("<td>" + lista_C.get(i).getDetalles().get(j).getDigital().getAurotes().get(0).getAlias() + "</td>");
-						out.println("<td>" + lista_C.get(i).getDetalles().get(j).getCantidad() + "</td>");
-						out.println("<td>" + lista_C.get(i).getDetalles().get(j).getSubtotal() + "</td>");
+						out.println("<tr><td>" + lista_C.get(i).getDetalles().get(j).getId()
+								+"</td><td>Fisico"
+								+"</td><td>"+lista_C.get(i).getDetalles().get(j).getDigital().getTitulo()
+								+"</td><td>"+lista_C.get(i).getDetalles().get(j).getCantidad()
+								+"</td><td>"+lista_C.get(i).getDetalles().get(j).getSubtotal()
+								+"</td>");
 					}
 				}
 						
-				out.println("<td>" + lista_C.get(i).getTotal() + "</td></tr>");
+				out.println("</table>");
 			}
 		}
 			
 	%>
 	
-	</table>
+	
 </body>
 </html>
